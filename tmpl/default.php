@@ -11,8 +11,16 @@
 // Nombre de slides.
 $nb = count($items);
 
+if ($nb) :
+
+JFactory::getDocument()->addScriptDeclaration("jQuery(document).ready(function($) {
+    $('#twtbs-carousel-". $module->id . "').carousel({
+        interval: " . ((int) $params->get('interval', 5000)) . ",
+        pause: " . ($params->get('pauseonhover', '1') == '1' ? "'hover'" : "false") . "
+    });
+});");
+
 ?>
-<?php if ($nb) : ?>
 <div id="twtbs-carousel-<?php echo $module->id; ?>" class="carousel<?php if ($params->get('displaycontrols') == '0' || $nb <= 1) : ?> carousel-nocontrols<?php endif; ?> slide">
     <?php if ($params->get('displayindicators') == '1') : ?>
     <ol class="carousel-indicators">
