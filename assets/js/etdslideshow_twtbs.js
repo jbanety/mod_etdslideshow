@@ -2,7 +2,7 @@
  * @package		Module ETD Slideshow - ETD Solutions
  *
  * @version		1.0
- * @copyright	Copyright (C) 2013-2015 ETD Solutions, SARL Etudoo. Tous droits réservés.
+ * @copyright	Copyright (C) 2013-2016 ETD Solutions, SARL Etudoo. Tous droits réservés.
  * @license		https://raw.githubusercontent.com/jbanety/mod_etdslideshow/master/LICENSE
  * @author		ETD Solutions http://etd-solutions.com
  */

@@ -37,7 +37,7 @@ JFactory::getDocument()->addScriptDeclaration("jQuery(document).ready(function($
                 <a href="<?php echo $item->imglink; ?>" target="<?php echo $item->imgtarget; ?>" class="item<?php if ($i==0): ?> active<?php endif; ?>">
             <?php endif; ?>
 
-                <img src="<?php echo $item->imgname; ?>" alt="">
+                <div class="bg-img" style="background-image:url('<?php echo $item->imgname ?>');"></div>
                 <?php if (!empty($item->imgcaption)) : ?>
                 <div class="carousel-caption">
                     <?php echo $item->imgcaption; ?>
