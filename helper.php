@@ -30,9 +30,15 @@ class modEtdSlideshowHelper {
 			// manage the title and description
 			if (stristr($item->imgcaption, "||")) {
 				$splitcaption = explode("||", $item->imgcaption);
-				$item->imgcaption = '<h4>' . $splitcaption[0] . '</h4><p>' . $splitcaption[1] . '</p>';
+				if ($params->get('allowhtml')) {
+					$item->imgcaption = '<h4>' . $splitcaption[0] . '</h4><p>' . $splitcaption[1] . '</p>';
+				} else {
+					$item->imgcaption = '<h4>' . htmlspecialchars($splitcaption[0]) . '</h4><p>' . htmlspecialchars($splitcaption[1]) . '</p>';
+				}
 			} elseif (!empty($item->imgcaption)) {
-                $item->imgcaption = '<p>' . $item->imgcaption . '</p>';
+				if (!$params->get('allowhtml')) {
+					$item->imgcaption = '<p>' . htmlspecialchars($item->imgcaption) . '</p>';
+				}
             }
 		}
 		//shuffle($items);
