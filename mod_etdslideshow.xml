@@ -49,6 +49,7 @@
                 <field
                         name="pauseonhover"
                         type="radio"
+                        class="btn-group btn-group-yesno"
                         default="1"
                         label="MOD_ETDSLIDESHOW_PAUSEONHOVER_LABEL"
                         description="MOD_ETDSLIDESHOW_PAUSEONHOVER_DESC"
@@ -58,8 +59,33 @@
                 </field>
 
                 <field
+                        name="wrap"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="1"
+                        label="MOD_ETDSLIDESHOW_WRAP_LABEL"
+                        description="MOD_ETDSLIDESHOW_WRAP_DESC"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="keyboard"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="1"
+                        label="MOD_ETDSLIDESHOW_KEYBOARD_LABEL"
+                        description="MOD_ETDSLIDESHOW_KEYBOARD_DESC"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
                         name="displayindicators"
                         type="radio"
+                        class="btn-group btn-group-yesno"
                         default="1"
                         label="MOD_ETDSLIDESHOW_DISPLAYINDICATORS_LABEL"
                         description="MOD_ETDSLIDESHOW_DISPLAYINDICATORS_DESC"
@@ -71,10 +97,23 @@
                 <field
                         name="displaycontrols"
                         type="radio"
+                        class="btn-group btn-group-yesno"
                         default="1"
                         label="MOD_ETDSLIDESHOW_DISPLAYCONTROLS_LABEL"
                         description="MOD_ETDSLIDESHOW_DISPLAYCONTROLS_DESC"
                         >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="allowhtml"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                        label="MOD_ETDSLIDESHOW_ALLOWHTML_LABEL"
+                        description="MOD_ETDSLIDESHOW_ALLOWHTML_DESC"
+                >
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
                 </field>

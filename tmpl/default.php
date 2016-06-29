@@ -16,7 +16,9 @@ if ($nb) :
 JFactory::getDocument()->addScriptDeclaration("jQuery(document).ready(function($) {
     $('#twtbs-carousel-". $module->id . "').carousel({
         interval: " . ((int) $params->get('interval', 5000)) . ",
-        pause: " . ($params->get('pauseonhover', '1') == '1' ? "'hover'" : "false") . "
+        pause: " . ($params->get('pauseonhover', '1') == '1' ? "'hover'" : "false") . ",
+        wrap: " . ($params->get('wrap', '1') == '1' ? "true" : "false") . ",
+        keyboard: " . ($params->get('keyboard', '1') == '1' ? "true" : "false") . "
     });
 });");
 
@@ -36,8 +38,7 @@ JFactory::getDocument()->addScriptDeclaration("jQuery(document).ready(function($
             <?php else: ?>
                 <a href="<?php echo $item->imglink; ?>" target="<?php echo $item->imgtarget; ?>" class="item<?php if ($i==0): ?> active<?php endif; ?>">
             <?php endif; ?>
-
-                <div class="bg-img" style="background-image:url('<?php echo $item->imgname ?>');"></div>
+                <div class="carousel-img" style="background-image:url('<?php echo $item->imgname ?>');"></div>
                 <?php if (!empty($item->imgcaption)) : ?>
                 <div class="carousel-caption">
                     <?php echo $item->imgcaption; ?>
