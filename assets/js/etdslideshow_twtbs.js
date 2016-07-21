@@ -8,6 +8,14 @@
  */
 +function ($) {
     'use strict';
+    
+    if (typeof MooTools != 'undefined' ) {
+		$(document).ready(function(){
+        	$('.carousel').each(function(index, element) {
+                $(this)[index].slide = null;
+			});
+		});
+	}
 
     // CSS TRANSITION SUPPORT (Shoutout: http://www.modernizr.com/)
     // ============================================================
