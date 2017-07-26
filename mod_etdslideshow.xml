@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+    <name>ETD Slideshow</name>
+    <creationDate>Juillet 2017</creationDate>
+    <author>ETD Solutions</author>
+    <authorEmail>contact@etd-solutions.com</authorEmail>
+    <authorUrl>http://etd-solutions.com</authorUrl>
+    <copyright>Copyright (C) 2017 EURL ETD Solutions. Tous droits réservés.</copyright>
+    <version>2.0.0</version>
+    <description>MOD_ETDSLIDESHOW_XML_DESCRIPTION</description>
+    <files>
+        <filename module="mod_etdslideshow">mod_etdslideshow.php</filename>
+        <folder>assets</folder>
+        <folder>fields</folder>
+        <folder>language</folder>
+        <folder>images</folder>
+        <folder>tmpl</folder>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <filename>mod_etdslideshow.xml</filename>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.mod_etdslideshow.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.mod_etdslideshow.sys.ini</language>
+        <language tag="fr-FR">language/fr-FR/fr-FR.mod_etdslideshow.ini</language>
+        <language tag="fr-FR">language/fr-FR/fr-FR.mod_etdslideshow.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params" addfieldpath="/modules/mod_etdslideshow/fields">
+
+            <fieldset name="slides" label="MOD_ETDSLIDESHOW_OPTIONS_SLIDES">
+                <field name="slides" type="etdslidesmanager" label="MOD_ETDSLIDESHOW_SLIDES_LABEL"
+                       description="MOD_ETDSLIDESHOW_SLIDES_DESC"
+                       default="[{|qq|imgname|qq|:|qq|modules\/mod_etdslideshow\/images\/slides\/bridge.jpg|qq|,|qq|imgcaption|qq|:|qq|This is a bridge|qq|,|qq|imgthumb|qq|:|qq|..\/modules\/mod_etdslideshow\/images\/slides\/bridge.jpg|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|_parent|qq|,|qq|imgalignment|qq|:|qq|default|qq|,|qq|imgvideo|qq|:|qq||qq|,|qq|slideselect|qq|:|qq|image|qq|},{|qq|imgname|qq|:|qq|modules\/MOD_ETDSLIDESHOW\/images\/slides\/road.jpg|qq|,|qq|imgcaption|qq|:|qq|This slideshow uses the JQuery script from &lt;a href=|dq|http:\/\/www.pixedelic.com\/plugins\/camera\/|dq|&gt;Pixedelic&lt;\/a&gt;|qq|,|qq|imgthumb|qq|:|qq|..\/modules\/MOD_ETDSLIDESHOW\/images\/slides\/road.jpg|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|_parent|qq|,|qq|imgalignment|qq|:|qq|default|qq|,|qq|imgvideo|qq|:|qq||qq|,|qq|slideselect|qq|:|qq|image|qq|},{|qq|imgname|qq|:|qq|modules\/MOD_ETDSLIDESHOW\/images\/slides\/big_bunny_fake.jpg|qq|,|qq|imgcaption|qq|:|qq|This is a Video slide|qq|,|qq|imgthumb|qq|:|qq|..\/modules\/MOD_ETDSLIDESHOW\/images\/slides\/big_bunny_fake.jpg|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|_parent|qq|,|qq|imgalignment|qq|:|qq|default|qq|,|qq|imgvideo|qq|:|qq|http:\/\/player.vimeo.com\/video\/2203727|qq|,|qq|slideselect|qq|:|qq|video|qq|}]"
+                       filter="raw"
+                        />
+            </fieldset>
+
+            <fieldset name="basic" label="MOD_ETDSLIDESHOW_OPTIONS_BASIC">
+                <field
+                        name="interval"
+                        type="text"
+                        default="5000"
+                        label="MOD_ETDSLIDESHOW_INTERVAL_LABEL"
+                        description="MOD_ETDSLIDESHOW_INTERVAL_DESC"
+                />
+
+                <field
+                        name="pauseonhover"
+                        type="radio"
+                        default="1"
+                        label="MOD_ETDSLIDESHOW_PAUSEONHOVER_LABEL"
+                        description="MOD_ETDSLIDESHOW_PAUSEONHOVER_DESC"
+                        >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="displayindicators"
+                        type="radio"
+                        default="1"
+                        label="MOD_ETDSLIDESHOW_DISPLAYINDICATORS_LABEL"
+                        description="MOD_ETDSLIDESHOW_DISPLAYINDICATORS_DESC"
+                        >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="displaycontrols"
+                        type="radio"
+                        default="1"
+                        label="MOD_ETDSLIDESHOW_DISPLAYCONTROLS_LABEL"
+                        description="MOD_ETDSLIDESHOW_DISPLAYCONTROLS_DESC"
+                        >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                        name="displayarrowbounce"
+                        type="radio"
+                        default="1"
+                        label="MOD_ETDSLIDESHOW_DISPLAYARROWBOUNCE_LABEL"
+                        description="MOD_ETDSLIDESHOW_DISPLAYARROWBOUNCE_DESC"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                        name="paginationclickable"
+                        type="radio"
+                        default="true"
+                        label="MOD_ETDSLIDESHOW_PAGINATIONCLICKABLE_LABEL"
+                        description="MOD_ETDSLIDESHOW_PAGINATIONCLICKABLE_DESC"
+                >
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+            </fieldset>
+            <fieldset name="advanced">
+
+                <field
+                        name="loadjquery"
+                        type="radio"
+                        default="1"
+                        label="MOD_ETDSLIDESHOW_LOADJQUERY_LABEL"
+                        description="MOD_ETDSLIDESHOW_LOADJQUERY_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="loadtwtbsjs"
+                        type="radio"
+                        default="1"
+                        label="MOD_ETDSLIDESHOW_LOADSWIPERJS_LABEL"
+                        description="MOD_ETDSLIDESHOW_LOADSWIPERJS_DESC"
+                        >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="loadtwtbscss"
+                        type="radio"
+                        default="1"
+                        label="MOD_ETDSLIDESHOW_LOADSWIPERCSS_LABEL"
+                        description="MOD_ETDSLIDESHOW_LOADSWIPERCSS_DESC"
+                        >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="layout"
+                        type="modulelayout"
+                        label="JFIELD_ALT_LAYOUT_LABEL"
+                        description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+
+                <field
+                        name="moduleclass_sfx"
+                        type="text"
+                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                        description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+
+                <field
+                        name="cache"
+                        type="list"
+                        default="1"
+                        label="COM_MODULES_FIELD_CACHING_LABEL"
+                        description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option
+                            value="1">JGLOBAL_USE_GLOBAL
+                    </option>
+                    <option
+                            value="0">COM_MODULES_FIELD_VALUE_NOCACHING
+                    </option>
+                </field>
+
+                <field
+                        name="cache_time"
+                        type="text"
+                        default="900"
+                        label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                        description="COM_MODULES_FIELD_CACHE_TIME_DESC"/>
+                <field
+                        name="cachemode"
+                        type="hidden"
+                        default="static">
+                    <option
+                            value="static"></option>
+                </field>
+
+            </fieldset>
+        </fields>
+    </config>
+</extension>
