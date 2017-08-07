@@ -49,11 +49,11 @@ new Swiper ('#swiper-carousel-" . $module->id . "', {
                     <div class="carousel-img" style="background-image:url('<?php echo $item->imgname ?>');"></div>
 
 
-                    <?php if (!empty($item->imgcaptiontxt)) : ?>
+                    <?php if (!empty($item->imgcaption)) : ?>
                         <div class="caption-container">
                             <div class="carousel-caption">
                                 <div>
-                                    <?php echo $item->imgcaptiontxt; ?>
+                                    <?php echo $item->imgcaption; ?>
                                 </div>
 
                             </div>
