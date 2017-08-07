@@ -28,11 +28,11 @@ class modEtdSlideshowHelper {
 			}
 
 			// manage the title and description
-			if (stristr($item->imgcaptiontxt, "||")) {
-				$splitcaption = explode("||", $item->imgcaptiontxt);
+			if (stristr($item->imgcaption, "||")) {
+				$splitcaption = explode("||", $item->imgcaption);
 				$item->imgcaption = '<h4>' . $splitcaption[0] . '</h4><p>' . $splitcaption[1] . '</p>';
-			} elseif (!empty($item->imgcaptiontxt)) {
-                $item->imgcaptiontxt = '<p>' . $item->imgcaptiontxt . '</p>';
+			} elseif (!empty($item->imgcaption)) {
+                $item->imgcaption = '<p>' . $item->imgcaption . '</p>';
             }
 		}
 		//shuffle($items);
